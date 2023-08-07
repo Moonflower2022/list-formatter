@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>List Formatter</title>
+    <style>
+        .center-x {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+        /*.checkbox {
+
+        }*/
+        .textwrap {
+            word-wrap: normal;
+        }
+    </style>
+    <script src="helpers.js"></script>
+</head>
+
+<body>
+    <div class="center-x" style="top: 7%">
+        Disclaimer! Describe mode does not work if the strings you are looking to isolate have numbers in them
+        <br>
+        <br>
+        Enter your unformatted list:
+        <br>
+        <br>
+        <form>
+            <textarea rows="10" cols="100" id="input" autofocus="true" placeholder="Enter, details, here"></textarea>
+        </form>
+        <br>
+        Separated by:
+        <br>
+        <br>
+        <input class="checkbox" type="checkbox" id="spaces">Spaces only</input>
+        <div style="display: inline-block; margin-left: 75px; display: none;" id="spaces-input">
+            <br>
+            How many?
+            <input type="text" id="spaces-input-count" value="1">
+        </div>
+        <br>
+        <input class="checkbox" type="checkbox" id="commas" checked>One comma and any whitespace</input>
+        <br>
+        <input class="checkbox" type="checkbox" id="describe">Describe it</input>
+        <div style="margin-left: 75px; display: none;" id="describe-input">
+            <br>
+            <input type="checkbox" id="describe-input-lines">New lines after each string</input>
+            <br>
+            <!--<input type="checkbox" id="describe-input-numbers">Includes increasing numbers</input>
+            <br>
+            <div style="margin-left: 75px; display: none;" id="describe-input-numbers-input">
+                <br>
+                Starting at:
+                <input type="text" id="describe-input-numbers-start" value="1">
+                <br>
+                Increasing by:
+                <input type="text" id="describe-input-numbers-step" value="1">
+                <br>
+            </div>-->
+            <br>
+            Describe the stuff before and after your string
+            <br>
+            and ignore numbers. If there isn't anything for
+            <br>
+            one of them, just leave that one blank.
+            <br>
+            <br>
+            Front
+            <br>
+            <input type="text" id="describe-input-struct-front">
+            <br>
+            Back
+            <br>
+            <input type="text" id="describe-input-struct-back">
+        </div>
+        <br>
+        Output:
+        <br>
+        <p id="output" style="width: 750px; word-wrap: break-word; white-space: normal;"></p>
+        <script src="main.js"></script>
+    </div>
+</body>
+
+</html>
